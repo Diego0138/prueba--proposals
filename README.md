@@ -1,1 +1,1 @@
-# prueba--proposals
+# prueba-proposals

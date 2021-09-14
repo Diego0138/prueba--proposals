@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.bbva.secarq.caas2:caascore-channel-infrastructure-seg:1.0.11">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/bbva/secarq/caas2/caascore-channel-infrastructure-seg/1.0.11/caascore-channel-infrastructure-seg-1.0.11.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/bbva/secarq/caas2/caascore-channel-infrastructure-seg/1.0.11/caascore-channel-infrastructure-seg-1.0.11-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/bbva/secarq/caas2/caascore-channel-infrastructure-seg/1.0.11/caascore-channel-infrastructure-seg-1.0.11-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

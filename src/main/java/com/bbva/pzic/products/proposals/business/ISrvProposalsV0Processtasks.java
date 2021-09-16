@@ -1,4 +1,4 @@
-package com.bbva.pzic.products.proposals.facade;
+package com.bbva.pzic.products.proposals.business;
 
 import com.bbva.jee.arq.spring.core.catalog.gabi.ServiceResponse;
 import com.bbva.pzic.products.proposals.facade.dto.ProcessTasks;

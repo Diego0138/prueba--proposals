@@ -11,3 +11,5 @@ help
 // Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2021-09-13 12:26:49
 sarc importTransaction --protocol APX --version 01 --copy "design-files/PPCUTGE1-01-PE.xml"
 sarc importTransaction --protocol APX --version 01 --copy "design-files/PPCUTGE1-01-PE.xml"
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2021-09-22 11:30:35
+sarc importTransaction --protocol APX --version 01 --copy "design-files/PPCUTGE1-01-PE.xml"

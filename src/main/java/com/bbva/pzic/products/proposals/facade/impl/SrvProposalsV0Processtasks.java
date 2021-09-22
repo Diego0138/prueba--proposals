@@ -1,10 +1,11 @@
-package com.bbva.pzic.products.proposals.business.impl;
+package com.bbva.pzic.products.proposals.facade.impl;
 
 import com.bbva.jee.arq.spring.core.catalog.gabi.ServiceResponse;
 import com.bbva.jee.arq.spring.core.servicing.annotations.SMC;
 import com.bbva.jee.arq.spring.core.servicing.annotations.SN;
 import com.bbva.jee.arq.spring.core.servicing.annotations.VN;
-import com.bbva.pzic.products.proposals.business.ISrvProposalsV0Processtasks;
+import com.bbva.pzic.products.proposals.facade.ISrvProposalsV0Processtasks;
+import com.bbva.pzic.products.proposals.business.ISrvIntProposalsV0Processtasks;
 import com.bbva.pzic.products.proposals.facade.dto.ProcessTasks;
 import com.bbva.pzic.products.proposals.facade.mapper.IListProcessTaskProposalsMapper;
 import com.bbva.pzic.routine.processing.data.DataProcessingExecutor;
@@ -33,7 +34,7 @@ public class SrvProposalsV0Processtasks implements ISrvProposalsV0Processtasks {
     private IListProcessTaskProposalsMapper listProcessTaskProposalsMapper;
 
     @Autowired
-    private ISrvProposalsV0Processtasks srvProposalsV0Processtasks;
+    private ISrvIntProposalsV0Processtasks srvIntProposalsV0Processtasks;
 
     @Autowired
     private DataProcessingExecutor inputDataProcessingExecutor;
@@ -54,8 +55,10 @@ public class SrvProposalsV0Processtasks implements ISrvProposalsV0Processtasks {
     queryParams.put("taskId", taskId);
 
     inputDataProcessingExecutor.perform("SMGG20203823",null,null,queryParams);
+
+
     ServiceResponse<ProcessTasks> serviceResponse = listProcessTaskProposalsMapper.mapOut(
-            srvProposalsV0Processtasks.lisProcessTasksProposals(
+            srvIntProposalsV0Processtasks.listProcessTaskProposalsMapper(
                     listProcessTaskProposalsMapper.mapIn(
                 (String) queryParams.get("businessProcessId"),
                 (String) queryParams.get("taskId")

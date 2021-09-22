@@ -14,7 +14,7 @@ public class ProcessTasks implements Serializable {
     private static final long serialVersionUID = 1L;
     private String businessProcessId;
     private String taskId;
-    private String status;
+    private Status status;
 
     public String getBusinessProcessId() {
         return businessProcessId;
@@ -32,11 +32,11 @@ public class ProcessTasks implements Serializable {
         this.taskId = taskId;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 }

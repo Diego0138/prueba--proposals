@@ -13,7 +13,7 @@ public class Status implements Serializable {
 
     private static final long serialVersionUID = 1L;
     private String id;
-    private String descripcion;
+    private String description;
 
     public String getId() {
         return id;
@@ -23,11 +23,11 @@ public class Status implements Serializable {
         this.id = id;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

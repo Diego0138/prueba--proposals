@@ -75,6 +75,5 @@ public class PeticionTransaccionPpcutge1_1 {
 	 */
 	@Campo(indice = 2, nombre = "taskId", tipo = TipoCampo.ALFANUMERICO, longitudMaxima = 10, signo = true)
 	private String taskid;
-
-
+	
 }

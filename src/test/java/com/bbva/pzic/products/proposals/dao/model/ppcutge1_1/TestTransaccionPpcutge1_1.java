@@ -1,62 +1,39 @@
 package com.bbva.pzic.products.proposals.dao.model.ppcutge1_1;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import com.bbva.jee.arq.spring.core.host.ServicioTransacciones;
 import org.junit.Test;
-import org.junit.Ignore;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.TestExecutionListeners;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
-import com.bbva.jee.arq.spring.core.host.ExcepcionTransaccion;
-import com.bbva.jee.arq.spring.core.host.protocolo.ExcepcionRespuestaHost;
-import com.bbva.jee.arq.spring.core.host.transporte.ExcepcionTransporte;
-import com.bbva.jee.arq.spring.core.servicing.test.BusinessServiceTestContextLoader;
-import com.bbva.jee.arq.spring.core.servicing.test.MockInvocationContextTestExecutionListener;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.when;
 
 /**
- * Test de la transacci&oacute;n <code>PPCUTGE1</code>
- * 
+ * Test de la transacci&oacute;n <code>PISDT303</code>
+ *
  * @author Arquitectura Spring BBVA
  */
-@Ignore
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(
-	loader = BusinessServiceTestContextLoader.class, 
-	locations = {
-        "classpath*:/META-INF/spring/applicationContext-*.xml", 
-        "classpath:/META-INF/spring/business-service.xml",
-        "classpath:/META-INF/spring/business-service-test.xml"
-    }
-)
-@TestExecutionListeners(listeners = { MockInvocationContextTestExecutionListener.class, DependencyInjectionTestExecutionListener.class })
+
+@RunWith(MockitoJUnitRunner.class)
 public class TestTransaccionPpcutge1_1 {
-	
-	private static final Log LOG = LogFactory.getLog(TestTransaccionPpcutge1_1.class);
-		
-	@Autowired
+
+	@InjectMocks
 	private TransaccionPpcutge1_1 transaccion;
-	
+
+	@Mock
+	private ServicioTransacciones servicioTransacciones;
+
 	@Test
-	public void test()  {
-		
-		PeticionTransaccionPpcutge1_1 peticion = new PeticionTransaccionPpcutge1_1();		
-		
-		/*
-		 * TODO: poblar la peticion con valores adecuados
-		 */
-		
-		try {
-			LOG.info("Invocando transaccion, peticion: " + peticion);
-			RespuestaTransaccionPpcutge1_1 respuesta = transaccion.invocar(peticion);
-			LOG.info("Recibida respuesta: " + respuesta);
-		} catch ( ExcepcionRespuestaHost e ) {
-			LOG.error("Error recibido desde host, codigoError: " + e.getCodigoError() + ", descripcion: " + e.getMessage());
-		} catch ( ExcepcionTransporte e ) {
-			LOG.error("Error de transporte", e);
-		}
+	public void test() {
+
+		PeticionTransaccionPpcutge1_1 peticion = new PeticionTransaccionPpcutge1_1();
+		RespuestaTransaccionPpcutge1_1 respuesta = new RespuestaTransaccionPpcutge1_1();
+
+		when(servicioTransacciones.invocar(PeticionTransaccionPpcutge1_1.class, RespuestaTransaccionPpcutge1_1.class, peticion))
+				.thenReturn(respuesta);
+		RespuestaTransaccionPpcutge1_1 result = transaccion.invocar(peticion);
+		assertEquals(result, respuesta);
+
 	}
 }

@@ -19,8 +19,8 @@ public class ProposalsaDAOV0ProcessTasks implements IProposalsaDAOV0ProcessTasks
     private ApxListProcessTasksProposals apxListProcessTasksProposals;
 
     @Override
-    public ProcessTasks lisProcessTasksProposals(final InputListProcessTasksProposals input) {
-        LOG.info("Invoking method APX");
+    public ProcessTasks listProcessTasksProposals(final InputListProcessTasksProposals input) {
+        LOG.info("Invoking method listProcessTasksProposals");
         return apxListProcessTasksProposals.perform(input);
     }
 }

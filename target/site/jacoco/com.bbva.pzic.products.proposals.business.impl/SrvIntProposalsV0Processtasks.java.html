@@ -9,10 +9,11 @@ import com.bbva.pzic.routine.validator.Validator;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-
-<span class="nc" id="L14">public class SrvIntProposalsV0Processtasks implements ISrvIntProposalsV0Processtasks {</span>
-<span class="nc" id="L15">    private static final Log LOG = LogFactory.getLog(SrvIntProposalsV0Processtasks.class);</span>
+@Component
+<span class="nc" id="L15">public class SrvIntProposalsV0Processtasks implements ISrvIntProposalsV0Processtasks {</span>
+<span class="nc" id="L16">    private static final Log LOG = LogFactory.getLog(SrvIntProposalsV0Processtasks.class);</span>
 
     @Autowired
     private Validator validator;
@@ -22,10 +23,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 
     @Override
     public ProcessTasks listProcessTaskProposalsMapper(final InputListProcessTasksProposals input) {
-<span class="nc" id="L25">        LOG.info(&quot;&quot;);</span>
-<span class="nc" id="L26">        LOG.info(&quot;&quot;);</span>
-<span class="nc" id="L27">        validator.validate(input, ValidationGroup.ListProcessTasksProposals.class);</span>
-<span class="nc" id="L28">        return proposalsaDAOV0ProcessTasks.lisProcessTasksProposals(input);</span>
+<span class="nc" id="L26">        LOG.info(&quot;SrvIntProposalsV0Processtasks.listProcessTaskProposalsMapper&quot;);</span>
+<span class="nc" id="L27">        LOG.info(&quot;validate listProcessTaskProposalsMapper&quot;);</span>
+<span class="nc" id="L28">        validator.validate(input, ValidationGroup.ListProcessTasksProposals.class);</span>
+<span class="nc" id="L29">        return proposalsaDAOV0ProcessTasks.listProcessTasksProposals(input);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

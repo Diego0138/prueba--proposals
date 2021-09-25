@@ -4,6 +4,7 @@ import com.bbva.jee.arq.spring.core.catalog.gabi.ServiceResponse;
 import com.bbva.jee.arq.spring.core.servicing.annotations.SMC;
 import com.bbva.jee.arq.spring.core.servicing.annotations.SN;
 import com.bbva.jee.arq.spring.core.servicing.annotations.VN;
+import com.bbva.pzic.products.proposals.business.dto.InputListProcessTasksProposals;
 import com.bbva.pzic.products.proposals.facade.ISrvProposalsV0Processtasks;
 import com.bbva.pzic.products.proposals.business.ISrvIntProposalsV0Processtasks;
 import com.bbva.pzic.products.proposals.facade.dto.ProcessTasks;
@@ -47,9 +48,9 @@ public class SrvProposalsV0Processtasks implements ISrvProposalsV0Processtasks {
     @Path("/process-tasks")
     @Produces(MediaType.APPLICATION_JSON)
     @SMC(registryID = "SMGG20203823", logicalID = "listProcessTasksProposals", forcedCatalog = "gabiCatalog")
-    public ServiceResponse<ProcessTasks> lisProcessTasksProposals(@QueryParam("businessProcessId") final String businessProcessId,
+    public ServiceResponse<ProcessTasks> listProcessTasksProposals(@QueryParam("businessProcessId") final String businessProcessId,
                                                                   @QueryParam("taskId") final String taskId){
-    LOG.info("");
+    LOG.info("listProcessTasksProposals");
     Map<String, Object> queryParams = new HashMap<>();
     queryParams.put("businessProcessId", businessProcessId);
     queryParams.put("taskId", taskId);

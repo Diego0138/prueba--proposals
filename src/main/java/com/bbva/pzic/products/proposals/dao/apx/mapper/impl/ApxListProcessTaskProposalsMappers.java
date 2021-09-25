@@ -16,7 +16,7 @@ public class ApxListProcessTaskProposalsMappers implements IApxListProcessTaskPr
     private static final Log LOG = LogFactory.getLog(ListProcessTaskProposalsMapper.class);
     @Override
     public PeticionTransaccionPpcutge1_1 mapIn(final InputListProcessTasksProposals inputListProcessTasksProposals) {
-        LOG.info("... called method ApxListProcessTaskProposalsMappers-mapIn");
+        LOG.info("... called method ApxListProcessTaskProposalsMappers.mapIn");
         PeticionTransaccionPpcutge1_1 dtoIn = new PeticionTransaccionPpcutge1_1();
         dtoIn.setBusinessprocessid(inputListProcessTasksProposals.getBusinessProcessId());
         dtoIn.setTaskid(inputListProcessTasksProposals.getTaskId());
@@ -25,7 +25,7 @@ public class ApxListProcessTaskProposalsMappers implements IApxListProcessTaskPr
 
     @Override
     public ProcessTasks mapOut(final RespuestaTransaccionPpcutge1_1 respuesta) {
-        LOG.info("... called method ApxListProcessTaskProposalsMappers-mapOut");
+        LOG.info("... called method ApxListProcessTaskProposalsMappers.mapOut");
         if(respuesta==null){
             return null;
         }
@@ -37,7 +37,7 @@ public class ApxListProcessTaskProposalsMappers implements IApxListProcessTaskPr
         return dtoOut;
     }
 
-    private Status mapOutStatus(com.bbva.pzic.products.proposals.dao.model.ppcutge1_1.Status status) {
+    private Status mapOutStatus(final com.bbva.pzic.products.proposals.dao.model.ppcutge1_1.Status status) {
         if(status == null){
             return null;
         }

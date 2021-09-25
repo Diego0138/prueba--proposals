@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="com.bbva.pzic.products.proposals.dao.apx.mapper.impl.ApxListProcessTasksProposalsMapperTest" time="0.835" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="com.bbva.pzic.products.proposals.dao.apx.mapper.impl.ApxListProcessTasksProposalsMapperTest" time="0.824" errors="0" skipped="0">
   <properties>
+    <property name="idea.version" value="2021.2.2"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="D:\ASOWorkTools\Tools\jdk-8u131-windows-x64\jre\bin"/>
     <property name="java.vm.version" value="25.131-b11"/>
@@ -20,7 +21,7 @@
     <property name="basedir" value="S:\Development\SARrc_Projects\pzic\prueba-proposals"/>
     <property name="java.endorsed.dirs" value="D:\ASOWorkTools\Tools\jdk-8u131-windows-x64\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="surefire.real.class.path" value="S:\Development\SARrc_Projects\pzic\prueba-proposals\target\surefire\surefirebooter1297085933531337923.jar;D:\\ASOWorkTools\\M2_REPO\\org\\jacoco\\org.jacoco.agent\\0.7.9\\org.jacoco.agent-0.7.9-runtime.jar"/>
+    <property name="surefire.real.class.path" value="S:\Development\SARrc_Projects\pzic\prueba-proposals\target\surefire\surefirebooter6172295601401969922.jar;D:\\ASOWorkTools\\M2_REPO\\org\\jacoco\\org.jacoco.agent\\0.7.9\\org.jacoco.agent-0.7.9-runtime.jar"/>
     <property name="java.io.tmpdir" value="C:\Users\user\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
@@ -44,7 +45,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="D:\ASOWorkTools\Tools\jdk-8u131-windows-x64\jre"/>
-    <property name="sun.java.command" value="S:\Development\SARrc_Projects\pzic\prueba-proposals\target\surefire\surefirebooter1297085933531337923.jar S:\Development\SARrc_Projects\pzic\prueba-proposals\target\surefire\surefire2099671939109604943tmp S:\Development\SARrc_Projects\pzic\prueba-proposals\target\surefire\surefire6552319981299103149tmp"/>
+    <property name="sun.java.command" value="S:\Development\SARrc_Projects\pzic\prueba-proposals\target\surefire\surefirebooter6172295601401969922.jar S:\Development\SARrc_Projects\pzic\prueba-proposals\target\surefire\surefire4164083059479173716tmp S:\Development\SARrc_Projects\pzic\prueba-proposals\target\surefire\surefire1719955909005682128tmp"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="es"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -61,8 +62,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.bbva.pzic.products.proposals.dao.apx.mapper.impl.ApxListProcessTasksProposalsMapperTest" name="mapOutFullTest" time="0.724"/>
-  <testcase classname="com.bbva.pzic.products.proposals.dao.apx.mapper.impl.ApxListProcessTasksProposalsMapperTest" name="mapInFullTest" time="0.009"/>
+  <testcase classname="com.bbva.pzic.products.proposals.dao.apx.mapper.impl.ApxListProcessTasksProposalsMapperTest" name="mapOutFullTest" time="0.713"/>
+  <testcase classname="com.bbva.pzic.products.proposals.dao.apx.mapper.impl.ApxListProcessTasksProposalsMapperTest" name="mapInFullTest" time="0.006"/>
   <testcase classname="com.bbva.pzic.products.proposals.dao.apx.mapper.impl.ApxListProcessTasksProposalsMapperTest" name="mapOutEmptyTest" time="0"/>
-  <testcase classname="com.bbva.pzic.products.proposals.dao.apx.mapper.impl.ApxListProcessTasksProposalsMapperTest" name="mapInEmptyTest" time="0.001"/>
+  <testcase classname="com.bbva.pzic.products.proposals.dao.apx.mapper.impl.ApxListProcessTasksProposalsMapperTest" name="mapInEmptyTest" time="0"/>
 </testsuite>

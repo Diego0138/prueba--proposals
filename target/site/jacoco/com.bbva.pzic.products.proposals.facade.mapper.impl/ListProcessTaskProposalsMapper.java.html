@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 
     @Override
     public InputListProcessTasksProposals mapIn(final String businessProcessId, final String taskId) {
-<span class="fc" id="L18">        LOG.info(&quot;... called method IListProcessTaskProposalsMapper-mapÍn&quot;);</span>
+<span class="fc" id="L18">        LOG.info(&quot;... called method ListProcessTaskProposalsMapper.mapIn&quot;);</span>
 <span class="fc" id="L19">        InputListProcessTasksProposals dtoIn = new InputListProcessTasksProposals();</span>
 <span class="fc" id="L20">        dtoIn.setBusinessProcessId(businessProcessId);</span>
 <span class="fc" id="L21">        dtoIn.setTaskId(taskId);</span>
@@ -24,7 +24,7 @@ import org.springframework.stereotype.Component;
 
     @Override
     public ServiceResponse&lt;ProcessTasks&gt; mapOut(final ProcessTasks processTasks) {
-<span class="fc" id="L27">        LOG.info(&quot;... called method IListProcessTaskProposalsMapper-mapOut&quot;);</span>
+<span class="fc" id="L27">        LOG.info(&quot;... called method ListProcessTaskProposalsMapper.mapOut&quot;);</span>
 <span class="fc bfc" id="L28" title="All 2 branches covered.">        if(processTasks == null){</span>
 <span class="fc" id="L29">            return null;</span>
         }

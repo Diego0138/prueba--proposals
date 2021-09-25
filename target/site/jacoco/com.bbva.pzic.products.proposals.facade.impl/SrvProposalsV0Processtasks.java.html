@@ -4,6 +4,7 @@ import com.bbva.jee.arq.spring.core.catalog.gabi.ServiceResponse;
 import com.bbva.jee.arq.spring.core.servicing.annotations.SMC;
 import com.bbva.jee.arq.spring.core.servicing.annotations.SN;
 import com.bbva.jee.arq.spring.core.servicing.annotations.VN;
+import com.bbva.pzic.products.proposals.business.dto.InputListProcessTasksProposals;
 import com.bbva.pzic.products.proposals.facade.ISrvProposalsV0Processtasks;
 import com.bbva.pzic.products.proposals.business.ISrvIntProposalsV0Processtasks;
 import com.bbva.pzic.products.proposals.facade.dto.ProcessTasks;
@@ -26,9 +27,9 @@ import java.util.Map;
 @SN(registryID = &quot;SNPE1700055&quot;, logicalID = &quot;proposals&quot;)
 @VN(vnn = &quot;v0&quot;)
 @Service
-<span class="nc" id="L29">public class SrvProposalsV0Processtasks implements ISrvProposalsV0Processtasks {</span>
+<span class="nc" id="L30">public class SrvProposalsV0Processtasks implements ISrvProposalsV0Processtasks {</span>
 
-<span class="nc" id="L31">    private static final Log LOG = LogFactory.getLog(SrvProposalsV0Processtasks.class);</span>
+<span class="nc" id="L32">    private static final Log LOG = LogFactory.getLog(SrvProposalsV0Processtasks.class);</span>
 
     @Autowired
     private IListProcessTaskProposalsMapper listProcessTaskProposalsMapper;
@@ -47,26 +48,26 @@ import java.util.Map;
     @Path(&quot;/process-tasks&quot;)
     @Produces(MediaType.APPLICATION_JSON)
     @SMC(registryID = &quot;SMGG20203823&quot;, logicalID = &quot;listProcessTasksProposals&quot;, forcedCatalog = &quot;gabiCatalog&quot;)
-    public ServiceResponse&lt;ProcessTasks&gt; lisProcessTasksProposals(@QueryParam(&quot;businessProcessId&quot;) final String businessProcessId,
+    public ServiceResponse&lt;ProcessTasks&gt; listProcessTasksProposals(@QueryParam(&quot;businessProcessId&quot;) final String businessProcessId,
                                                                   @QueryParam(&quot;taskId&quot;) final String taskId){
-<span class="nc" id="L52">    LOG.info(&quot;&quot;);</span>
-<span class="nc" id="L53">    Map&lt;String, Object&gt; queryParams = new HashMap&lt;&gt;();</span>
-<span class="nc" id="L54">    queryParams.put(&quot;businessProcessId&quot;, businessProcessId);</span>
-<span class="nc" id="L55">    queryParams.put(&quot;taskId&quot;, taskId);</span>
+<span class="nc" id="L53">    LOG.info(&quot;lisProcessTasksProposals&quot;);</span>
+<span class="nc" id="L54">    Map&lt;String, Object&gt; queryParams = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L55">    queryParams.put(&quot;businessProcessId&quot;, businessProcessId);</span>
+<span class="nc" id="L56">    queryParams.put(&quot;taskId&quot;, taskId);</span>
 
-<span class="nc" id="L57">    inputDataProcessingExecutor.perform(&quot;SMGG20203823&quot;,null,null,queryParams);</span>
+<span class="nc" id="L58">    inputDataProcessingExecutor.perform(&quot;SMGG20203823&quot;,null,null,queryParams);</span>
 
 
-<span class="nc" id="L60">    ServiceResponse&lt;ProcessTasks&gt; serviceResponse = listProcessTaskProposalsMapper.mapOut(</span>
-<span class="nc" id="L61">            srvIntProposalsV0Processtasks.listProcessTaskProposalsMapper(</span>
-<span class="nc" id="L62">                    listProcessTaskProposalsMapper.mapIn(</span>
-<span class="nc" id="L63">                (String) queryParams.get(&quot;businessProcessId&quot;),</span>
-<span class="nc" id="L64">                (String) queryParams.get(&quot;taskId&quot;)</span>
+<span class="nc" id="L61">    ServiceResponse&lt;ProcessTasks&gt; serviceResponse = listProcessTaskProposalsMapper.mapOut(</span>
+<span class="nc" id="L62">            srvIntProposalsV0Processtasks.listProcessTaskProposalsMapper(</span>
+<span class="nc" id="L63">                    listProcessTaskProposalsMapper.mapIn(</span>
+<span class="nc" id="L64">                (String) queryParams.get(&quot;businessProcessId&quot;),</span>
+<span class="nc" id="L65">                (String) queryParams.get(&quot;taskId&quot;)</span>
                     )
             )
     );
-<span class="nc" id="L68">    outputDataProcessingExecutor.perform(&quot;SMGG20203823&quot;,serviceResponse,null,null);</span>
-<span class="nc" id="L69">    return serviceResponse;</span>
+<span class="nc" id="L69">    outputDataProcessingExecutor.perform(&quot;SMGG20203823&quot;,serviceResponse,null,null);</span>
+<span class="nc" id="L70">    return serviceResponse;</span>
 
   }
 

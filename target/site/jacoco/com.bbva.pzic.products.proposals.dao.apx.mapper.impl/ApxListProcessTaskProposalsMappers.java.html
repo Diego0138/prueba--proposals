@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 <span class="fc" id="L16">    private static final Log LOG = LogFactory.getLog(ListProcessTaskProposalsMapper.class);</span>
     @Override
     public PeticionTransaccionPpcutge1_1 mapIn(final InputListProcessTasksProposals inputListProcessTasksProposals) {
-<span class="fc" id="L19">        LOG.info(&quot;... called method ApxListProcessTaskProposalsMappers-mapIn&quot;);</span>
+<span class="fc" id="L19">        LOG.info(&quot;... called method ApxListProcessTaskProposalsMappers.mapIn&quot;);</span>
 <span class="fc" id="L20">        PeticionTransaccionPpcutge1_1 dtoIn = new PeticionTransaccionPpcutge1_1();</span>
 <span class="fc" id="L21">        dtoIn.setBusinessprocessid(inputListProcessTasksProposals.getBusinessProcessId());</span>
 <span class="fc" id="L22">        dtoIn.setTaskid(inputListProcessTasksProposals.getTaskId());</span>
@@ -25,7 +25,7 @@ import org.springframework.stereotype.Component;
 
     @Override
     public ProcessTasks mapOut(final RespuestaTransaccionPpcutge1_1 respuesta) {
-<span class="fc" id="L28">        LOG.info(&quot;... called method ApxListProcessTaskProposalsMappers-mapOut&quot;);</span>
+<span class="fc" id="L28">        LOG.info(&quot;... called method ApxListProcessTaskProposalsMappers.mapOut&quot;);</span>
 <span class="fc bfc" id="L29" title="All 2 branches covered.">        if(respuesta==null){</span>
 <span class="fc" id="L30">            return null;</span>
         }
@@ -37,7 +37,7 @@ import org.springframework.stereotype.Component;
 <span class="fc" id="L37">        return dtoOut;</span>
     }
 
-    private Status mapOutStatus(com.bbva.pzic.products.proposals.dao.model.ppcutge1_1.Status status) {
+    private Status mapOutStatus(final com.bbva.pzic.products.proposals.dao.model.ppcutge1_1.Status status) {
 <span class="pc bpc" id="L41" title="1 of 2 branches missed.">        if(status == null){</span>
 <span class="nc" id="L42">            return null;</span>
         }

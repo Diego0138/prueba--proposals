@@ -1,6 +1,7 @@
 package com.bbva.pzic.products.proposals.business.dto;
 
 public class InputListProcessTasksProposals {
+
     private String businessProcessId;
     private String taskId;
 

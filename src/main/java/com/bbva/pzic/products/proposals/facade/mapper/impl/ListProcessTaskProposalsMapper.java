@@ -15,7 +15,7 @@ public class ListProcessTaskProposalsMapper implements IListProcessTaskProposals
 
     @Override
     public InputListProcessTasksProposals mapIn(final String businessProcessId, final String taskId) {
-        LOG.info("... called method IListProcessTaskProposalsMapper-mapÍn");
+        LOG.info("... called method ListProcessTaskProposalsMapper.mapIn");
         InputListProcessTasksProposals dtoIn = new InputListProcessTasksProposals();
         dtoIn.setBusinessProcessId(businessProcessId);
         dtoIn.setTaskId(taskId);
@@ -24,7 +24,7 @@ public class ListProcessTaskProposalsMapper implements IListProcessTaskProposals
 
     @Override
     public ServiceResponse<ProcessTasks> mapOut(final ProcessTasks processTasks) {
-        LOG.info("... called method IListProcessTaskProposalsMapper-mapOut");
+        LOG.info("... called method ListProcessTaskProposalsMapper.mapOut");
         if(processTasks == null){
             return null;
         }

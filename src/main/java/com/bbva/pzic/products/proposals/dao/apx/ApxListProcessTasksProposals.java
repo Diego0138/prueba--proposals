@@ -6,16 +6,17 @@ import com.bbva.pzic.products.proposals.dao.apx.mapper.IApxListProcessTaskPropos
 import com.bbva.pzic.products.proposals.dao.model.ppcutge1_1.PeticionTransaccionPpcutge1_1;
 import com.bbva.pzic.products.proposals.dao.model.ppcutge1_1.RespuestaTransaccionPpcutge1_1;
 import com.bbva.pzic.products.proposals.facade.dto.ProcessTasks;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ApxListProcessTasksProposals {
 
-@Autowired
+    @Autowired
     private IApxListProcessTaskProposalsMappers mappers;
 
-@Autowired
+    @Autowired
     private InvocadorTransaccion<PeticionTransaccionPpcutge1_1, RespuestaTransaccionPpcutge1_1> transaccion;
 
     public ProcessTasks perform(final InputListProcessTasksProposals input){

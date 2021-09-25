@@ -4,5 +4,5 @@ import com.bbva.pzic.products.proposals.business.dto.InputListProcessTasksPropos
 import com.bbva.pzic.products.proposals.facade.dto.ProcessTasks;
 
 public interface IProposalsaDAOV0ProcessTasks {
-    ProcessTasks lisProcessTasksProposals (InputListProcessTasksProposals input);
+    ProcessTasks listProcessTasksProposals (InputListProcessTasksProposals input);
 }

@@ -9,8 +9,9 @@ import com.bbva.pzic.routine.validator.Validator;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class SrvIntProposalsV0Processtasks implements ISrvIntProposalsV0Processtasks {
     private static final Log LOG = LogFactory.getLog(SrvIntProposalsV0Processtasks.class);
 
@@ -22,9 +23,9 @@ public class SrvIntProposalsV0Processtasks implements ISrvIntProposalsV0Processt
 
     @Override
     public ProcessTasks listProcessTaskProposalsMapper(final InputListProcessTasksProposals input) {
-        LOG.info("");
-        LOG.info("");
+        LOG.info("SrvIntProposalsV0Processtasks.listProcessTaskProposalsMapper");
+        LOG.info("validate listProcessTaskProposalsMapper");
         validator.validate(input, ValidationGroup.ListProcessTasksProposals.class);
-        return proposalsaDAOV0ProcessTasks.lisProcessTasksProposals(input);
+        return proposalsaDAOV0ProcessTasks.listProcessTasksProposals(input);
     }
 }

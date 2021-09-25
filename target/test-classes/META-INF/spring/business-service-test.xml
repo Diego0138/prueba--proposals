@@ -30,7 +30,7 @@
 
     <jaxrs:server address="/${sa:logicalId}">
         <jaxrs:serviceBeans>
-            <ref bean="srvInsurancesV0Features"/>
+            <ref bean="srvProposalsV0Processtasks"/>
         </jaxrs:serviceBeans>
     </jaxrs:server>
 

@@ -5,6 +5,7 @@ import com.bbva.pzic.products.proposals.dao.apx.mapper.IApxListProcessTaskPropos
 import com.bbva.pzic.products.proposals.dao.model.ppcutge1_1.PeticionTransaccionPpcutge1_1;
 import com.bbva.pzic.products.proposals.dao.model.ppcutge1_1.RespuestaTransaccionPpcutge1_1;
 import com.bbva.pzic.products.proposals.facade.dto.ProcessTasks;
+import com.bbva.pzic.products.proposals.facade.dto.Status;
 import com.bbva.pzic.products.proposals.facade.mapper.impl.ListProcessTaskProposalsMapper;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -31,7 +32,18 @@ public class ApxListProcessTaskProposalsMappers implements IApxListProcessTaskPr
         ProcessTasks dtoOut = new ProcessTasks();
         dtoOut.setBusinessProcessId(respuesta.getCampo_1_businessprocessid());
         dtoOut.setTaskId(respuesta.getCampo_2_taskid());
+        dtoOut.setStatus(mapOutStatus(respuesta.getStatus()));
 
         return dtoOut;
+    }
+
+    private Status mapOutStatus(com.bbva.pzic.products.proposals.dao.model.ppcutge1_1.Status status) {
+        if(status == null){
+            return null;
+        }
+        Status ouputStatus = new Status();
+        ouputStatus.setDescription(status.getDescription());
+        ouputStatus.setId(status.getId());
+        return ouputStatus;
     }
 }

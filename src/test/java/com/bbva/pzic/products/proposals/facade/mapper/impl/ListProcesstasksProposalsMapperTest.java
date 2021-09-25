@@ -31,7 +31,7 @@ public class ListProcesstasksProposalsMapperTest {
     @Test
     public void mapInEmptyTest(){
         InputListProcessTasksProposals result = mapper.mapIn(null,null);
-        assertNull(result);
+        assertNotNull(result);
         assertNull(result.getBusinessProcessId());
         assertNull(result.getTaskId());
 

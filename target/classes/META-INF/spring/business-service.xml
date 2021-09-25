@@ -53,7 +53,7 @@
             <entry key="json" value="application/json"/>
         </jaxrs:extensionMappings>
         <jaxrs:serviceBeans>
-            <ref bean="srvInsurancesV0Features"/>
+            <ref bean="srvProposalsV0Processtasks"/>
             <ref bean="swaggerResourceJSON"/>
         </jaxrs:serviceBeans>
     </jaxrs:server>

@@ -6,10 +6,12 @@ import com.bbva.pzic.products.proposals.dao.apx.mapper.IApxListProcessTaskPropos
 import com.bbva.pzic.products.proposals.dao.model.ppcutge1_1.PeticionTransaccionPpcutge1_1;
 import com.bbva.pzic.products.proposals.dao.model.ppcutge1_1.RespuestaTransaccionPpcutge1_1;
 import com.bbva.pzic.products.proposals.facade.dto.ProcessTasks;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import java.io.IOException;
+
+import static junit.framework.TestCase.*;
+
 
 public class ApxListProcessTasksProposalsMapperTest {
     private IApxListProcessTaskProposalsMappers mappers;
@@ -17,28 +19,28 @@ public class ApxListProcessTasksProposalsMapperTest {
     public void setUp(){
         mappers = new ApxListProcessTaskProposalsMappers();
     }
-    @Test
+
+  @Test
     public void mapInFullTest() throws IOException {
         InputListProcessTasksProposals input = EntityMock.getInstance().getInputListProcessTasksProposals();
 
         PeticionTransaccionPpcutge1_1 result = mappers.mapIn(input);
 
-        Assert.assertNotNull(result);
-        Assert.assertNotNull(result.getBusinessprocessid());
-        Assert.assertNotNull(result.getTaskid());
+        assertNotNull(result);
+        assertNotNull(result.getBusinessprocessid());
+        assertNotNull(result.getTaskid());
 
-        Assert.assertEquals(input.getBusinessProcessId(), result.getBusinessprocessid());
-        Assert.assertEquals(input.getTaskId(), result.getTaskid());
+        assertEquals(input.getBusinessProcessId(), result.getBusinessprocessid());
+        assertEquals(input.getTaskId(), result.getTaskid());
 
     }
 
     @Test
-    public void mapInEmptyTest() throws IOException{
+    public void mapInEmptyTest(){
         PeticionTransaccionPpcutge1_1 result = mappers.mapIn(new InputListProcessTasksProposals());
-
-        Assert.assertNotNull(result);
-        Assert.assertNotNull(result.getBusinessprocessid());
-        Assert.assertNotNull(result.getTaskid());
+        assertNotNull(result);
+        assertNull(result.getBusinessprocessid());
+        assertNull(result.getTaskid());
 
     }
     @Test
@@ -46,22 +48,23 @@ public class ApxListProcessTasksProposalsMapperTest {
         RespuestaTransaccionPpcutge1_1 input = EntityMock.getInstance().getRespuestaTransaccionPpcutge1_1();
 
         ProcessTasks result = mappers.mapOut(input);
-        Assert.assertNotNull(result);
-        Assert.assertNotNull(result.getBusinessProcessId());
-        Assert.assertNotNull(result.getTaskId());
-        Assert.assertNotNull(result.getStatus());
-        Assert.assertNotNull(result.getStatus().getDescription());
+        assertNotNull(result);
+        assertNotNull(result.getBusinessProcessId());
+        assertNotNull(result.getTaskId());
+        assertNotNull(result.getStatus());
+        assertNotNull(result.getStatus().getId());
+        assertNotNull(result.getStatus().getDescription());
 
-        Assert.assertEquals(input.getCampo_1_businessprocessid(), result.getBusinessProcessId());
-        Assert.assertEquals(input.getCampo_2_taskid(), result.getTaskId());
-        Assert.assertEquals(input.getStatus(), result.getStatus().getId());
-        Assert.assertEquals(input.getStatus().getDescription(), result.getStatus().getDescription());
+        assertEquals(input.getCampo_1_businessprocessid(), result.getBusinessProcessId());
+        assertEquals(input.getCampo_2_taskid(), result.getTaskId());
+        assertEquals(input.getStatus().getId(), result.getStatus().getId());
+        assertEquals(input.getStatus().getDescription(), result.getStatus().getDescription());
 
     }
 
     @Test
     public void mapOutEmptyTest(){
         ProcessTasks result = mappers.mapOut(null);
-        Assert.assertNotNull(result);
+        assertNull(result);
     }
 }

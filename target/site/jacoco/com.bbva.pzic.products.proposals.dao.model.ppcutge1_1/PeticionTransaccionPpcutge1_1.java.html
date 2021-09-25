@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PeticionTransaccionPpcutge1_1.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">pzic_products_proposals</a> &gt; <a href="index.source.html" class="el_package">com.bbva.pzic.products.proposals.dao.model.ppcutge1_1</a> &gt; <span class="el_source">PeticionTransaccionPpcutge1_1.java</span></div><h1>PeticionTransaccionPpcutge1_1.java</h1><pre class="source lang-java linenums"><span class="fc" id="L1">package com.bbva.pzic.products.proposals.dao.model.ppcutge1_1;</span>
+
+import com.bbva.jee.arq.spring.core.host.Atributo;
+import com.bbva.jee.arq.spring.core.host.Campo;
+import com.bbva.jee.arq.spring.core.host.TipoCampo;
+import com.bbva.jee.arq.spring.core.host.Transaccion;
+
+import org.springframework.roo.addon.javabean.annotations.RooJavaBean;
+import org.springframework.roo.addon.javabean.annotations.RooToString;
+import org.springframework.roo.addon.javabean.annotations.RooSerializable;
+
+/**
+ * &lt;p&gt;Transacci&amp;oacute;n &lt;code&gt;PPCUTGE1&lt;/code&gt;&lt;/p&gt;
+ * &lt;p&gt;Informaci&amp;oacute;n de la transacci&amp;oacute;n:
+ * &lt;ul&gt;
+ *    &lt;li&gt;&lt;b&gt;Tipo:&lt;/b&gt; 1&lt;/li&gt;
+ *    &lt;li&gt;&lt;b&gt;Subtipo:&lt;/b&gt; 1&lt;/li&gt;
+ *    &lt;li&gt;&lt;b&gt;Versi&amp;oacute;n:&lt;/b&gt; 1&lt;/li&gt;
+ *    &lt;li&gt;&lt;b&gt;Clase de petici&amp;oacute;n:&lt;/b&gt; PeticionTransaccionPpcutge1_1&lt;/li&gt;
+ *    &lt;li&gt;&lt;b&gt;Clase de respuesta:&lt;/b&gt; RespuestaTransaccionPpcutge1_1&lt;/li&gt;
+ * &lt;/ul&gt;
+ * &lt;/p&gt;
+ * &lt;p&gt;Configuraci&amp;oacute;n de la transacci&amp;oacute;n:
+ * &lt;ul&gt;
+ *    &lt;li&gt;&lt;b&gt;Nombre configuraci&amp;oacute;n:&lt;/b&gt; default_apx&lt;/li&gt;
+ * &lt;/ul&gt;
+ * &lt;/p&gt;
+ * &lt;p&gt;Copy de la transacci&amp;oacute;n:&lt;/p&gt;
+ * &lt;code&gt;&lt;pre&gt; * FICHERO: PPCUTGE1-01-PE.xml
+ * &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; standalone=&amp;quot;yes&amp;quot;?&amp;gt;
+ * &amp;lt;transaction xmlns=&amp;quot;http://www.w3schools.com&amp;quot; transactionName=&amp;quot;PPCUTGE1&amp;quot; application=&amp;quot;PPCU&amp;quot; version=&amp;quot;01&amp;quot; country=&amp;quot;PE&amp;quot;
+ * language=&amp;quot;ES&amp;quot;&amp;gt;
+ * &amp;lt;paramsIn&amp;gt;
+ * &amp;lt;parameter order=&amp;quot;1&amp;quot; name=&amp;quot;businessProcessId&amp;quot; mandatory=&amp;quot;0&amp;quot; type=&amp;quot;String&amp;quot; size=&amp;quot;40&amp;quot;/&amp;gt;
+ * &amp;lt;parameter order=&amp;quot;2&amp;quot; name=&amp;quot;taskId&amp;quot; mandatory=&amp;quot;0&amp;quot; type=&amp;quot;String&amp;quot; size=&amp;quot;10&amp;quot;/&amp;gt;
+ * &amp;lt;/paramsIn&amp;gt;
+ * &amp;lt;paramsOut&amp;gt;
+ * &amp;lt;parameter order=&amp;quot;1&amp;quot; name=&amp;quot;businessProcessId&amp;quot; mandatory=&amp;quot;1&amp;quot; type=&amp;quot;String&amp;quot; size=&amp;quot;40&amp;quot;/&amp;gt;
+ * &amp;lt;parameter order=&amp;quot;2&amp;quot; name=&amp;quot;taskId&amp;quot; mandatory=&amp;quot;1&amp;quot; type=&amp;quot;String&amp;quot; size=&amp;quot;10&amp;quot;/&amp;gt;
+ * &amp;lt;dto order=&amp;quot;3&amp;quot; name=&amp;quot;status&amp;quot; mandatory=&amp;quot;1&amp;quot; package=&amp;quot;com.bbva.ppcu.dto.getestado.StatusDTO&amp;quot;
+ * artifactId=&amp;quot;PPCUCGE1&amp;quot;&amp;gt;
+ * &amp;lt;parameter order=&amp;quot;1&amp;quot; name=&amp;quot;id&amp;quot; mandatory=&amp;quot;1&amp;quot; type=&amp;quot;String&amp;quot; size=&amp;quot;20&amp;quot;/&amp;gt;
+ * &amp;lt;parameter order=&amp;quot;2&amp;quot; name=&amp;quot;description&amp;quot; mandatory=&amp;quot;1&amp;quot; type=&amp;quot;String&amp;quot; size=&amp;quot;100&amp;quot;/&amp;gt;
+ * &amp;lt;/dto&amp;gt;
+ * &amp;lt;/paramsOut&amp;gt;
+ * &amp;lt;description&amp;gt;Transaccion para obtener el estado de proceso&amp;lt;/description&amp;gt;
+ * &amp;lt;/transaction&amp;gt;
+&lt;/pre&gt;&lt;/code&gt;
+ * 
+ * @see RespuestaTransaccionPpcutge1_1
+ *
+ * @author Arquitectura Spring BBVA
+ */
+@Transaccion(
+	nombre = &quot;PPCUTGE1&quot;,
+	tipo = 1, 
+	subtipo = 1,	
+	version = 1,
+	configuracion = &quot;default_apx&quot;,
+	respuesta = RespuestaTransaccionPpcutge1_1.class,
+	atributos = {@Atributo(nombre = &quot;country&quot;, valor = &quot;PE&quot;)}
+)
+@RooJavaBean
+@RooSerializable
+<span class="fc" id="L65">public class PeticionTransaccionPpcutge1_1 {</span>
+		
+		/**
+	 * &lt;p&gt;Campo &lt;code&gt;businessProcessId&lt;/code&gt;, &amp;iacute;ndice: &lt;code&gt;1&lt;/code&gt;, tipo: &lt;code&gt;ALFANUMERICO&lt;/code&gt;
+	 */
+	@Campo(indice = 1, nombre = &quot;businessProcessId&quot;, tipo = TipoCampo.ALFANUMERICO, longitudMaxima = 40, signo = true)
+	private String businessprocessid;
+	
+	/**
+	 * &lt;p&gt;Campo &lt;code&gt;taskId&lt;/code&gt;, &amp;iacute;ndice: &lt;code&gt;2&lt;/code&gt;, tipo: &lt;code&gt;ALFANUMERICO&lt;/code&gt;
+	 */
+	@Campo(indice = 2, nombre = &quot;taskId&quot;, tipo = TipoCampo.ALFANUMERICO, longitudMaxima = 10, signo = true)
+	private String taskid;
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

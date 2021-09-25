@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ApxListProcessTaskProposalsMappers.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">pzic_products_proposals</a> &gt; <a href="index.source.html" class="el_package">com.bbva.pzic.products.proposals.dao.apx.mapper.impl</a> &gt; <span class="el_source">ApxListProcessTaskProposalsMappers.java</span></div><h1>ApxListProcessTaskProposalsMappers.java</h1><pre class="source lang-java linenums">package com.bbva.pzic.products.proposals.dao.apx.mapper.impl;
+
+import com.bbva.pzic.products.proposals.business.dto.InputListProcessTasksProposals;
+import com.bbva.pzic.products.proposals.dao.apx.mapper.IApxListProcessTaskProposalsMappers;
+import com.bbva.pzic.products.proposals.dao.model.ppcutge1_1.PeticionTransaccionPpcutge1_1;
+import com.bbva.pzic.products.proposals.dao.model.ppcutge1_1.RespuestaTransaccionPpcutge1_1;
+import com.bbva.pzic.products.proposals.facade.dto.ProcessTasks;
+import com.bbva.pzic.products.proposals.facade.dto.Status;
+import com.bbva.pzic.products.proposals.facade.mapper.impl.ListProcessTaskProposalsMapper;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.stereotype.Component;
+
+@Component
+<span class="fc" id="L15">public class ApxListProcessTaskProposalsMappers implements IApxListProcessTaskProposalsMappers {</span>
+<span class="fc" id="L16">    private static final Log LOG = LogFactory.getLog(ListProcessTaskProposalsMapper.class);</span>
+    @Override
+    public PeticionTransaccionPpcutge1_1 mapIn(final InputListProcessTasksProposals inputListProcessTasksProposals) {
+<span class="fc" id="L19">        LOG.info(&quot;... called method ApxListProcessTaskProposalsMappers-mapIn&quot;);</span>
+<span class="fc" id="L20">        PeticionTransaccionPpcutge1_1 dtoIn = new PeticionTransaccionPpcutge1_1();</span>
+<span class="fc" id="L21">        dtoIn.setBusinessprocessid(inputListProcessTasksProposals.getBusinessProcessId());</span>
+<span class="fc" id="L22">        dtoIn.setTaskid(inputListProcessTasksProposals.getTaskId());</span>
+<span class="fc" id="L23">        return dtoIn;</span>
+    }
+
+    @Override
+    public ProcessTasks mapOut(final RespuestaTransaccionPpcutge1_1 respuesta) {
+<span class="fc" id="L28">        LOG.info(&quot;... called method ApxListProcessTaskProposalsMappers-mapOut&quot;);</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        if(respuesta==null){</span>
+<span class="fc" id="L30">            return null;</span>
+        }
+<span class="fc" id="L32">        ProcessTasks dtoOut = new ProcessTasks();</span>
+<span class="fc" id="L33">        dtoOut.setBusinessProcessId(respuesta.getCampo_1_businessprocessid());</span>
+<span class="fc" id="L34">        dtoOut.setTaskId(respuesta.getCampo_2_taskid());</span>
+<span class="fc" id="L35">        dtoOut.setStatus(mapOutStatus(respuesta.getStatus()));</span>
+
+<span class="fc" id="L37">        return dtoOut;</span>
+    }
+
+    private Status mapOutStatus(com.bbva.pzic.products.proposals.dao.model.ppcutge1_1.Status status) {
+<span class="pc bpc" id="L41" title="1 of 2 branches missed.">        if(status == null){</span>
+<span class="nc" id="L42">            return null;</span>
+        }
+<span class="fc" id="L44">        Status ouputStatus = new Status();</span>
+<span class="fc" id="L45">        ouputStatus.setDescription(status.getDescription());</span>
+<span class="fc" id="L46">        ouputStatus.setId(status.getId());</span>
+<span class="fc" id="L47">        return ouputStatus;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

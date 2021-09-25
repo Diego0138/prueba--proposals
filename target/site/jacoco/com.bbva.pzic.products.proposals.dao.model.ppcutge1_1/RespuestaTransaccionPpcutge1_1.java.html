@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RespuestaTransaccionPpcutge1_1.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">pzic_products_proposals</a> &gt; <a href="index.source.html" class="el_package">com.bbva.pzic.products.proposals.dao.model.ppcutge1_1</a> &gt; <span class="el_source">RespuestaTransaccionPpcutge1_1.java</span></div><h1>RespuestaTransaccionPpcutge1_1.java</h1><pre class="source lang-java linenums"><span class="pc" id="L1">package com.bbva.pzic.products.proposals.dao.model.ppcutge1_1;</span>
+
+import com.bbva.jee.arq.spring.core.host.Cabecera;
+import com.bbva.jee.arq.spring.core.host.NombreCabecera;
+import com.bbva.jee.arq.spring.core.host.Campo;
+import com.bbva.jee.arq.spring.core.host.Formato;
+import com.bbva.jee.arq.spring.core.host.RespuestaTransaccion;
+import com.bbva.jee.arq.spring.core.host.TipoCampo;
+
+import org.springframework.roo.addon.javabean.annotations.RooJavaBean;
+import org.springframework.roo.addon.javabean.annotations.RooToString;
+import org.springframework.roo.addon.javabean.annotations.RooSerializable;
+
+
+
+/**
+ * Bean de respuesta para la transacci&amp;oacute;n &lt;code&gt;PPCUTGE1&lt;/code&gt;
+ * 
+ * @see PeticionTransaccionPpcutge1_1
+ */
+@RespuestaTransaccion
+@Formato(nombre = &quot;1&quot;)
+@RooJavaBean
+@RooSerializable
+<span class="fc" id="L25">public class RespuestaTransaccionPpcutge1_1 {</span>
+	
+	/**
+	 * &lt;p&gt;Cabecera &lt;code&gt;COD-AVISO&lt;/code&gt;&lt;/p&gt;
+	 */
+	@Cabecera(nombre=NombreCabecera.CODIGO_AVISO)
+	private String codigoAviso;
+	
+	/**
+	 * &lt;p&gt;Cabecera &lt;code&gt;DES-AVISO&lt;/code&gt;&lt;/p&gt;
+	 */
+	@Cabecera(nombre=NombreCabecera.DESCRIPCION_AVISO)
+	private String descripcionAviso;
+	
+	/**
+	 * &lt;p&gt;Cabecera &lt;code&gt;COD-UUAA-AVISO&lt;/code&gt;&lt;/p&gt;
+	 */
+	@Cabecera(nombre=NombreCabecera.APLICACION_AVISO)
+	private String aplicacionAviso;
+	
+	/**
+	 * &lt;p&gt;Cabecera &lt;code&gt;COD-RETORNO&lt;/code&gt;&lt;/p&gt;
+	 */
+	@Cabecera(nombre=NombreCabecera.CODIGO_RETORNO)
+	private String codigoRetorno;
+	
+	/**
+	 * &lt;p&gt;Campo &lt;code&gt;campo_1_businessProcessId&lt;/code&gt;, &amp;iacute;ndice: &lt;code&gt;1&lt;/code&gt;, tipo: &lt;code&gt;ALFANUMERICO&lt;/code&gt;
+	 */
+	@Campo(indice = 1, nombre = &quot;businessProcessId&quot;, tipo = TipoCampo.ALFANUMERICO, longitudMaxima = 40, signo = true, obligatorio = true)
+	private String campo_1_businessprocessid;
+	
+	/**
+	 * &lt;p&gt;Campo &lt;code&gt;campo_2_taskId&lt;/code&gt;, &amp;iacute;ndice: &lt;code&gt;2&lt;/code&gt;, tipo: &lt;code&gt;ALFANUMERICO&lt;/code&gt;
+	 */
+	@Campo(indice = 2, nombre = &quot;taskId&quot;, tipo = TipoCampo.ALFANUMERICO, longitudMaxima = 10, signo = true, obligatorio = true)
+	private String campo_2_taskid;
+	
+	/**
+	 * &lt;p&gt;Campo &lt;code&gt;status&lt;/code&gt;, &amp;iacute;ndice: &lt;code&gt;3&lt;/code&gt;, tipo: &lt;code&gt;DTO&lt;/code&gt;
+	 */
+	@Campo(indice = 3, nombre = &quot;status&quot;, tipo = TipoCampo.DTO)
+	private Status status;
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

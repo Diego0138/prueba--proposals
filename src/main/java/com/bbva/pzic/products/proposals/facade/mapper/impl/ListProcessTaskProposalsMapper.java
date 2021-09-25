@@ -6,7 +6,7 @@ import com.bbva.pzic.products.proposals.facade.dto.ProcessTasks;
 import com.bbva.pzic.products.proposals.facade.mapper.IListProcessTaskProposalsMapper;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.felix.scr.annotations.Component;
+import org.springframework.stereotype.Component;
 
 @Component
 public class ListProcessTaskProposalsMapper implements IListProcessTaskProposalsMapper {

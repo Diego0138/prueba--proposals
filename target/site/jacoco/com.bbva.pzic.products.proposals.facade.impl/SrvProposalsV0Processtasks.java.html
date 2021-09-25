@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SrvProposalsV0Processtasks.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">pzic_products_proposals</a> &gt; <a href="index.source.html" class="el_package">com.bbva.pzic.products.proposals.facade.impl</a> &gt; <span class="el_source">SrvProposalsV0Processtasks.java</span></div><h1>SrvProposalsV0Processtasks.java</h1><pre class="source lang-java linenums">package com.bbva.pzic.products.proposals.facade.impl;
+
+import com.bbva.jee.arq.spring.core.catalog.gabi.ServiceResponse;
+import com.bbva.jee.arq.spring.core.servicing.annotations.SMC;
+import com.bbva.jee.arq.spring.core.servicing.annotations.SN;
+import com.bbva.jee.arq.spring.core.servicing.annotations.VN;
+import com.bbva.pzic.products.proposals.facade.ISrvProposalsV0Processtasks;
+import com.bbva.pzic.products.proposals.business.ISrvIntProposalsV0Processtasks;
+import com.bbva.pzic.products.proposals.facade.dto.ProcessTasks;
+import com.bbva.pzic.products.proposals.facade.mapper.IListProcessTaskProposalsMapper;
+import com.bbva.pzic.routine.processing.data.DataProcessingExecutor;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+import java.util.HashMap;
+import java.util.Map;
+
+@Path(&quot;/v0&quot;)
+@Produces(MediaType.APPLICATION_JSON)
+@SN(registryID = &quot;SNPE1700055&quot;, logicalID = &quot;proposals&quot;)
+@VN(vnn = &quot;v0&quot;)
+@Service
+<span class="nc" id="L29">public class SrvProposalsV0Processtasks implements ISrvProposalsV0Processtasks {</span>
+
+<span class="nc" id="L31">    private static final Log LOG = LogFactory.getLog(SrvProposalsV0Processtasks.class);</span>
+
+    @Autowired
+    private IListProcessTaskProposalsMapper listProcessTaskProposalsMapper;
+
+    @Autowired
+    private ISrvIntProposalsV0Processtasks srvIntProposalsV0Processtasks;
+
+    @Autowired
+    private DataProcessingExecutor inputDataProcessingExecutor;
+
+    @Autowired
+    private DataProcessingExecutor outputDataProcessingExecutor;
+
+    @Override
+    @GET
+    @Path(&quot;/process-tasks&quot;)
+    @Produces(MediaType.APPLICATION_JSON)
+    @SMC(registryID = &quot;SMGG20203823&quot;, logicalID = &quot;listProcessTasksProposals&quot;, forcedCatalog = &quot;gabiCatalog&quot;)
+    public ServiceResponse&lt;ProcessTasks&gt; lisProcessTasksProposals(@QueryParam(&quot;businessProcessId&quot;) final String businessProcessId,
+                                                                  @QueryParam(&quot;taskId&quot;) final String taskId){
+<span class="nc" id="L52">    LOG.info(&quot;&quot;);</span>
+<span class="nc" id="L53">    Map&lt;String, Object&gt; queryParams = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L54">    queryParams.put(&quot;businessProcessId&quot;, businessProcessId);</span>
+<span class="nc" id="L55">    queryParams.put(&quot;taskId&quot;, taskId);</span>
+
+<span class="nc" id="L57">    inputDataProcessingExecutor.perform(&quot;SMGG20203823&quot;,null,null,queryParams);</span>
+
+
+<span class="nc" id="L60">    ServiceResponse&lt;ProcessTasks&gt; serviceResponse = listProcessTaskProposalsMapper.mapOut(</span>
+<span class="nc" id="L61">            srvIntProposalsV0Processtasks.listProcessTaskProposalsMapper(</span>
+<span class="nc" id="L62">                    listProcessTaskProposalsMapper.mapIn(</span>
+<span class="nc" id="L63">                (String) queryParams.get(&quot;businessProcessId&quot;),</span>
+<span class="nc" id="L64">                (String) queryParams.get(&quot;taskId&quot;)</span>
+                    )
+            )
+    );
+<span class="nc" id="L68">    outputDataProcessingExecutor.perform(&quot;SMGG20203823&quot;,serviceResponse,null,null);</span>
+<span class="nc" id="L69">    return serviceResponse;</span>
+
+  }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

@@ -1,6 +1,9 @@
 {
-  "taskId": "23443",
-  "businessProcessId": "CAR-321434234",
-  "Id": "id-341",
-  "description": "sadasddasdsa"
+  "campo_2_taskid": "87848384",
+  "campo_1_businessprocessid": "982HE",
+  "status": {
+    "id": "id-341",
+    "description": "sadasddasdsa"
+  }
+
 }
